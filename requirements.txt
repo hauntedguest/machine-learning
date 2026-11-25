@@ -1,0 +1,7 @@
+# Core (used so far)
+pandas
+scikit-learn
+matplotlib
+jupyter
+
+# Add packages here as each module needs them (numpy comes with pandas)
