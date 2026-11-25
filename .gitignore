@@ -4,3 +4,22 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .env
+
+# ML artifacts (keep large/binary files out of GitHub)
+data/raw/
+datasets/
+models/
+checkpoints/
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.ckpt
+*.safetensors
+*.parquet
+*.zip
+mlruns/
+wandb/
+.env.*

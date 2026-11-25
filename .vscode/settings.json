@@ -1,0 +1,11 @@
+{
+  "gitdoc.enabled": false,
+  "gitdoc.autoCommitDelay": 300000,
+  "gitdoc.autoPush": "afterDelay",
+  "gitdoc.autoPushDelay": 600000,
+  "gitdoc.autoPull": "onPush",
+  "gitdoc.pullOnOpen": true,
+  "gitdoc.commitOnClose": true,
+  "gitdoc.commitValidationLevel": "none",
+  "gitdoc.ai.enabled": true
+}
