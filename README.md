@@ -10,7 +10,7 @@ I'm an automation engineer (RPA) moving into AI engineering. Everything here is 
 
 | # | Module | Status | Highlights |
 |---|---|---|---|
-| 01 | [Math & Statistics](01-math-and-statistics) | ⏳ Not started | Probability, distributions, hypothesis testing, A/B testing |
+| 01 | [Math & Statistics](01-math-and-statistics) | ✅ Done | Probability, distributions, hypothesis testing, A/B testing |
 | 02 | [Machine Learning](02-machine-learning) | 🟡 In progress | **Regression ✅** · Classification · Ensembles · Unsupervised · ML lifecycle |
 | 03 | [Deep Learning](03-deep-learning) | ⏳ Not started | PyTorch, CNNs, transfer learning, RNN/LSTM, Transformers |
 | 04 | [NLP](04-nlp) | ⏳ Not started | Text preprocessing, TF-IDF, embeddings, spaCy, Hugging Face, BERT |

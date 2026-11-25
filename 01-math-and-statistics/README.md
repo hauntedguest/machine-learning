@@ -1,55 +1,55 @@
-# 01 · Math & Statistics
+# 01 · Math & Statistics ✅
 
 The statistics and math that ML is built on: describing data, probability, distributions, sampling and hypothesis testing.
 
 ## 1. Describing data
 
-- [ ] Types of data
-- [ ] Charts: pie, bar, histogram, line, scatter, bubble
-- [ ] Univariate, bivariate and multivariate analysis
-- [ ] Descriptive vs inferential statistics
-- [ ] Measures of central tendency: mean, median, mode
-- [ ] Percentiles
-- [ ] Measures of dispersion: range, IQR, variance, standard deviation
-- [ ] Box plots and outlier treatment using IQR
-- [ ] Correlation vs causation
+- [x] Types of data
+- [x] Charts: pie, bar, histogram, line, scatter, bubble
+- [x] Univariate, bivariate and multivariate analysis
+- [x] Descriptive vs inferential statistics
+- [x] Measures of central tendency: mean, median, mode
+- [x] Percentiles
+- [x] Measures of dispersion: range, IQR, variance, standard deviation
+- [x] Box plots and outlier treatment using IQR
+- [x] Correlation vs causation
 
 ## 2. NumPy for math
 
-- [ ] NumPy introduction and basic operations
-- [ ] Matrix operations
-- [ ] Slicing and stacking
+- [x] NumPy introduction and basic operations
+- [x] Matrix operations
+- [x] Slicing and stacking
 
 ## 3. Probability
 
-- [ ] Probability basics
-- [ ] Addition and multiplication rules
-- [ ] Conditional probability and Bayes' theorem
+- [x] Probability basics
+- [x] Addition and multiplication rules
+- [x] Conditional probability and Bayes' theorem
 
 ## 4. Distributions
 
-- [ ] Probability distributions
-- [ ] Skewness
-- [ ] Normal distribution and detecting outliers with it
-- [ ] Z-score and the standard normal distribution
+- [x] Probability distributions
+- [x] Skewness
+- [x] Normal distribution and detecting outliers with it
+- [x] Z-score and the standard normal distribution
 
 ## 5. Sampling
 
-- [ ] Random sampling and sample bias
-- [ ] Law of large numbers
-- [ ] Central limit theorem and sampling distribution
-- [ ] Standard error
-- [ ] Confidence intervals
+- [x] Random sampling and sample bias
+- [x] Law of large numbers
+- [x] Central limit theorem and sampling distribution
+- [x] Standard error
+- [x] Confidence intervals
 
 ## 6. Hypothesis testing
 
-- [ ] Null vs alternate hypothesis
-- [ ] Z-test and rejection region
-- [ ] p-value
-- [ ] Statistical power and effect size
-- [ ] A/B testing (using a Z-test)
-- [ ] T-test
-- [ ] Chi-squared distribution, goodness of fit and test of independence
+- [x] Null vs alternate hypothesis
+- [x] Z-test and rejection region
+- [x] p-value
+- [x] Statistical power and effect size
+- [x] A/B testing (using a Z-test)
+- [x] T-test
+- [x] Chi-squared distribution, goodness of fit and test of independence
 
 ## Project for this module
 
