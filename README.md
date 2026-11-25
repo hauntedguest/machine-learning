@@ -1,59 +1,81 @@
-# Machine Learning
+# AI & Machine Learning
 
-My hands-on notebooks from learning machine learning, written as I go. I'm moving from RPA development into AI engineering, and this repo is where the practice code lives.
+My complete AI/ML learning repository, from math and statistics through machine learning, deep learning and NLP, to Generative AI and agentic systems.
 
-Each folder is one concept: a small dataset, a Jupyter notebook, and the results it produced.
+I'm an automation engineer (RPA) moving into AI engineering. Everything here is hands-on: each topic has a notebook, the dataset it uses, and the results it produced. I'm following the [Codebasics AI Engineering & Data Science Bootcamp](https://codebasics.io) and adding my own notes and experiments along the way.
 
 ![Linear regression on home prices](assets/linear_regression_plot.png)
 
-## What's inside
+## Progress
 
-### Supervised ML: Regression
+| # | Module | Status | Highlights |
+|---|---|---|---|
+| 01 | [Math & Statistics](01-math-and-statistics) | ⏳ Not started | Probability, distributions, hypothesis testing, A/B testing |
+| 02 | [Machine Learning](02-machine-learning) | 🟡 In progress | **Regression ✅** · Classification · Ensembles · Unsupervised · ML lifecycle |
+| 03 | [Deep Learning](03-deep-learning) | ⏳ Not started | PyTorch, CNNs, transfer learning, RNN/LSTM, Transformers |
+| 04 | [NLP](04-nlp) | ⏳ Not started | Text preprocessing, TF-IDF, embeddings, spaCy, Hugging Face, BERT |
+| 05 | [Gen AI & Agentic AI](05-gen-ai-and-agentic-ai) | ⏳ Not started | LLMs, RAG, LangChain, LangGraph, CrewAI, MCP, AI agents |
+| ⭐ | [Projects](projects) | ⏳ Not started | End-to-end, deployed projects for each module |
+
+## Latest work: Regression
 
 | Notebook | What it does | Result |
 |---|---|---|
-| [Linear Regression](Regression/Linear%20Regression/linear_regression_single_variable.ipynb) | Predicts home price (₹ lakhs) from area alone with `y = mx + b` | `y = 0.0517·area + 18.05`; 2000 sq ft → ₹121.4L |
-| [Multiple Linear Regression](Regression/Multiple%20Linear%20Regression/linear_regression_multiple_variables.ipynb) | Adds bedrooms as a second feature, then works out the prediction by hand with `m1·x1 + m2·x2 + b` to confirm it matches `model.predict()` | 1500 sq ft, 3 BHK → ₹106.83L (both ways) |
-| [Train Test Split](Regression/Train%20Test%20Split/train_test.ipynb) | Uses the UCI Auto MPG dataset (398 cars, 7 features) to predict fuel efficiency. Fills missing horsepower values with the mean, splits the data 80/20 and evaluates on the test set | R² = **0.85**, MSE = 8.2 |
-| [One Hot Encoding](Regression/One%20hot%20Encoding/one_hot_encoding.ipynb) | Converts the text `locality` column to numbers using `pd.get_dummies(drop_first=True)` to avoid the dummy-variable trap, then trains and tests the model | R² = **0.86**; same house costs ~₹48L more in Banjara Hills than in Mankhal |
+| [Linear regression](02-machine-learning/01-regression/01-linear-regression) | Predicts home price from area with `y = mx + b` | `price = 0.0517·area + 18.05` |
+| [Multiple linear regression](02-machine-learning/01-regression/02-multiple-linear-regression) | Adds bedrooms as a feature, then recalculates the prediction by hand to confirm it matches `model.predict()` | ₹106.83L both ways |
+| [Train-test split & metrics](02-machine-learning/01-regression/03-train-test-split) | Predicts car fuel efficiency on the UCI Auto MPG dataset (398 cars), with missing-value handling and an 80/20 split | **R² = 0.85**, MSE = 8.2 |
+| [One-hot encoding](02-machine-learning/01-regression/04-one-hot-encoding) | Encodes a text `locality` column with `drop_first=True` to avoid multicollinearity | **R² = 0.86** on test data |
+| [Exercise: weather](02-machine-learning/01-regression/exercises/01-weather-temperature) | Predicts daily temperature from sunlight hours, then from sunlight + humidity | |
 
-### Exercises
+See the [Machine Learning module](02-machine-learning) for the full topic list and notes.
 
-| Notebook | What it does |
-|---|---|
-| [Exercise 1: Weather](Excercises/Excercise%201/assignment.ipynb) | Predicts daily temperature from hours of sunlight (single variable), then from sunlight + humidity (multiple variables) |
+## Repository structure
 
-## Key concepts
+```
+├── 01-math-and-statistics/
+├── 02-machine-learning/
+│   └── 01-regression/
+│       ├── 01-linear-regression/
+│       ├── 02-multiple-linear-regression/
+│       ├── 03-train-test-split/
+│       ├── 04-one-hot-encoding/
+│       └── exercises/
+├── 03-deep-learning/
+├── 04-nlp/
+├── 05-gen-ai-and-agentic-ai/
+├── projects/
+└── assets/
+```
 
-- **Linear regression** fits a line (or a plane, with more features) through the data. `model.predict()` simply plugs new values into the learned equation.
-- **Cost function:** MSE is the standard choice for linear regression. It's differentiable everywhere and penalises large errors more heavily, which works well with gradient descent.
-- **Gradient descent** finds the best slope and intercept step by step, instead of trying every possible combination.
-- **Train/test split:** a model is judged on data it hasn't seen. `random_state` keeps the split reproducible.
-- **Evaluation metrics:** MAE, MSE and R². R² is the easiest to read: 1.0 is a perfect fit and 0 means the model is no better than predicting the average.
-- **Encoding:** label encoding for ordered categories, one-hot encoding for unordered ones. Dropping one dummy column avoids multicollinearity.
-- **Overfitting vs underfitting** (high variance vs high bias). L1 (Lasso) and L2 (Ridge) regularization help control overfitting.
+Each module folder has its own README with the topics it covers and a checklist of my progress. Inside a module, every topic gets its own folder with the notebook and its data.
 
 ## Tech stack
 
-Python 3.13 · pandas · scikit-learn · Jupyter
+**Used so far:** Python · pandas · scikit-learn · Jupyter
+
+**Coming up in this repo:**
+
+| Area | Tools |
+|---|---|
+| Data & math | NumPy, Matplotlib, Seaborn |
+| Machine learning | XGBoost, MLflow |
+| Deep learning | PyTorch, Optuna |
+| NLP | spaCy, Hugging Face Transformers |
+| Gen AI & agents | LangChain, LangGraph, CrewAI, ChromaDB, MCP, Amazon Bedrock AgentCore |
+| Apps & deployment | Streamlit, FastAPI |
 
 ## Run it locally
 
 ```bash
 git clone https://github.com/hauntedguest/machine-learning.git
 cd machine-learning
-python -m venv .venv && source .venv/bin/activate
-pip install pandas scikit-learn jupyter
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open a notebook from inside its own folder so the relative CSV paths resolve. The Train Test Split notebook downloads the Auto MPG dataset from the UCI repository, so it needs an internet connection.
+Open each notebook from its own folder so the relative data paths resolve. Some notebooks download public datasets (for example UCI Auto MPG), so they need an internet connection.
 
-## Roadmap
+## Connect
 
-- [x] Regression: linear, multiple, train/test split, metrics, one-hot encoding
-- [ ] Classification
-- [ ] Unsupervised learning
-- [ ] Moving on to LLM engineering: RAG and agents
-
-Learning path: [Codebasics AI Engineering & Data Science Bootcamp](https://codebasics.io).
+I post what I learn on [LinkedIn](https://www.linkedin.com/in/pranav-gupta-264438228/). Feedback and suggestions are welcome; feel free to open an issue.
