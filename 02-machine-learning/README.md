@@ -18,7 +18,7 @@ Supervised and unsupervised machine learning with scikit-learn, from the math be
 | Data preprocessing: one-hot encoding | ✅ | 📓 [04-one-hot-encoding](01-regression/04-one-hot-encoding) |
 | Polynomial regression | ✅ | |
 | Overfitting and underfitting | ✅ | |
-| L1 and L2 regularization (Lasso, Ridge) | ✅ | |
+| L1 and L2 regularization (Lasso, Ridge) | ✅ | 📓 [05-L1-L2-Regularisation](01-regression/05-L1-L2-Regularisation) |
 | Bias-variance trade-off | ✅ | |
 | Exercise: weather temperature prediction | ✅ | 📓 [exercises/01-weather-temperature](01-regression/exercises/01-weather-temperature) |
 
@@ -29,7 +29,10 @@ Supervised and unsupervised machine learning with scikit-learn, from the math be
 - Gradient descent finds the best `m` and `b` step by step instead of trying every combination. Learning rate and epochs control how it converges.
 - Always evaluate on data the model hasn't seen. `random_state` keeps the split reproducible.
 - One-hot encode nominal categories and drop one dummy column. If you know N−1 of the columns you already know the last one, which causes multicollinearity.
-- High bias leads to underfitting and high variance leads to overfitting. Regularization (Ridge/Lasso) helps control overfitting.
+- High bias leads to underfitting and high variance leads to overfitting. Regularization (Ridge/Lasso) helps control overfitting. With 150 features and only 150 training rows, plain linear regression scored R² 0.74 on test data, while Lasso scored 0.99 and Ridge 0.95.
+- Memory trick for bias-variance, **BUVO**: high **B**ias → **U**nderfitting, high **V**ariance → **O**verfitting.
+- Fix underfitting with more relevant features, a more complex model or less regularization. Fix overfitting with more data, fewer features or more regularization.
+- Ridge (L2) shrinks coefficients towards zero. Lasso (L1) can shrink some to exactly zero, which removes features that don't help.
 
 ## 2. Classification
 

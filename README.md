@@ -25,6 +25,7 @@ I'm an automation engineer (RPA) moving into AI engineering. Everything here is 
 | [Multiple linear regression](02-machine-learning/01-regression/02-multiple-linear-regression) | Adds bedrooms as a feature, then recalculates the prediction by hand to confirm it matches `model.predict()` | ₹106.83L both ways |
 | [Train-test split & metrics](02-machine-learning/01-regression/03-train-test-split) | Predicts car fuel efficiency on the UCI Auto MPG dataset (398 cars), with missing-value handling and an 80/20 split | **R² = 0.85**, MSE = 8.2 |
 | [One-hot encoding](02-machine-learning/01-regression/04-one-hot-encoding) | Encodes a text `locality` column with `drop_first=True` to avoid multicollinearity | **R² = 0.86** on test data |
+| [L1 & L2 regularization](02-machine-learning/01-regression/05-L1-L2-Regularisation) | Compares plain linear regression with Lasso (L1) and Ridge (L2) on a dataset with 150 features and only 150 training rows, a setup that encourages overfitting | R² **0.74 → 0.99** (Lasso), 0.95 (Ridge) |
 | [Exercise: weather](02-machine-learning/01-regression/exercises/01-weather-temperature) | Predicts daily temperature from sunlight hours, then from sunlight + humidity | |
 
 See the [Machine Learning module](02-machine-learning) for the full topic list and notes.
@@ -39,6 +40,7 @@ See the [Machine Learning module](02-machine-learning) for the full topic list a
 │       ├── 02-multiple-linear-regression/
 │       ├── 03-train-test-split/
 │       ├── 04-one-hot-encoding/
+│       ├── 05-L1-L2-Regularisation/
 │       └── exercises/
 ├── 03-deep-learning/
 ├── 04-nlp/
