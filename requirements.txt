@@ -3,6 +3,7 @@ pandas
 scikit-learn
 matplotlib
 seaborn
+openpyxl
 jupyter
 
 # Add packages here as each module needs them (numpy comes with pandas)
