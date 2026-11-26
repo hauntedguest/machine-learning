@@ -36,16 +36,27 @@ Supervised and unsupervised machine learning with scikit-learn, from the math be
 
 ## 2. Classification
 
-- [ ] Logistic regression: binary classification
-- [ ] Model evaluation: accuracy, precision, recall, F1 score, confusion matrix
-- [ ] Logistic regression: multiclass classification
-- [ ] Cost function: log loss
-- [ ] Support Vector Machine (SVM)
-- [ ] Data preprocessing: scaling
-- [ ] scikit-learn pipelines
-- [ ] Naive Bayes
-- [ ] Decision tree
-- [ ] Handling class imbalance
+| Topic | Status | Notebook |
+|---|---|---|
+| Logistic regression: binary classification | ✅ | 📓 [01-Logistic-Regression](02-classification/01-Logistic-Regression) |
+| Model evaluation: accuracy, precision, recall, F1 score, confusion matrix | ✅ | 📓 [01-Logistic-Regression](02-classification/01-Logistic-Regression) · [02-Multi-Class-Classification](02-classification/02-Multi-Class-Classification) |
+| Logistic regression: multiclass classification | ✅ | 📓 [02-Multi-Class-Classification](02-classification/02-Multi-Class-Classification) |
+| Cost function: log loss | ⏳ | |
+| Support Vector Machine (SVM) | ✅ | 📓 [03-SVM](02-classification/03-SVM) |
+| Data preprocessing: scaling | ✅ | 📓 [03-SVM](02-classification/03-SVM) |
+| scikit-learn pipelines | ✅ | 📓 [03-SVM](02-classification/03-SVM) · [04-Naive-Bayes](02-classification/04-Naive-Bayes-SMS%20Spam%20Classifier) |
+| Naive Bayes | ✅ | 📓 [04-Naive-Bayes-SMS Spam Classifier](02-classification/04-Naive-Bayes-SMS%20Spam%20Classifier) |
+| Decision tree | ✅ | 📓 [05- Decision Tree](02-classification/05-%20Decision%20Tree) |
+| Handling class imbalance | ⏳ | |
+
+### Key takeaways
+
+- Logistic regression's probability is just `sigmoid(m·x + b)`. I recalculated it by hand from `coef_` and `intercept_`: a monthly salary of 62,000 gives 0.955, the same as `predict_proba()`.
+- Accuracy alone hides per-class mistakes. The car-ownership model scored 0.89 accuracy, but the confusion matrix shows it missed one of the four car owners (recall 0.75 for that class).
+- SVM is sensitive to feature scale. On the raisin data the RBF kernel went from 0.83 to 0.88 accuracy after `StandardScaler`, and the linear kernel needed about 42.8 million solver iterations unscaled versus 1,214 scaled. Fit the scaler on the training data only and reuse it on the test data.
+- A scikit-learn `Pipeline` chains preprocessing and the model so `fit`/`predict` run both steps. It gave exactly the same results as doing the steps by hand (SVM 0.88, Naive Bayes 0.99).
+- `CountVectorizer` + `MultinomialNB` is a strong, simple baseline for text: 0.99 accuracy and 0.97 F1 on spam SMS.
+- Decision trees can use gini impurity or entropy (information gain); on the salary data both produced the same tree. Scoring 100% on the training rows says nothing about unseen data.
 
 ## 3. Ensemble learning
 
