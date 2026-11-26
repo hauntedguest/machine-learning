@@ -2,6 +2,7 @@
 pandas
 scikit-learn
 matplotlib
+seaborn
 jupyter
 
 # Add packages here as each module needs them (numpy comes with pandas)
