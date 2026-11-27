@@ -47,7 +47,7 @@ Supervised and unsupervised machine learning with scikit-learn, from the math be
 | scikit-learn pipelines | ✅ | 📓 [03-SVM](02-classification/03-SVM) · [04-Naive-Bayes](02-classification/04-Naive-Bayes-SMS%20Spam%20Classifier) |
 | Naive Bayes | ✅ | 📓 [04-Naive-Bayes-SMS Spam Classifier](02-classification/04-Naive-Bayes-SMS%20Spam%20Classifier) |
 | Decision tree | ✅ | 📓 [05- Decision Tree](02-classification/05-%20Decision%20Tree) |
-| Handling class imbalance | ⏳ | |
+| Handling class imbalance | ✅ | 📓 [06 - Class Imbalance](02-classification/06%20-%20Class%20Imbalance) |
 
 ### Key takeaways
 
@@ -57,15 +57,27 @@ Supervised and unsupervised machine learning with scikit-learn, from the math be
 - A scikit-learn `Pipeline` chains preprocessing and the model so `fit`/`predict` run both steps. It gave exactly the same results as doing the steps by hand (SVM 0.88, Naive Bayes 0.99).
 - `CountVectorizer` + `MultinomialNB` is a strong, simple baseline for text: 0.99 accuracy and 0.97 F1 on spam SMS.
 - Decision trees can use gini impurity or entropy (information gain); on the salary data both produced the same tree. Scoring 100% on the training rows says nothing about unseen data.
+- With imbalanced classes, accuracy looks good while the minority class is missed. On the churn data (2,655 stay vs 495 churn) plain logistic regression scored 0.89 accuracy but caught only 41% of churners. Undersampling, SMOTE and SMOTE Tomek all raised churn recall to 0.84–0.86, at the cost of precision (about 0.45) and overall accuracy (0.81). Resample only the training set and keep the test set as it is.
 
 ## 3. Ensemble learning
 
-- [ ] Introduction to ensemble learning
-- [ ] Majority voting, average and weighted average
-- [ ] Bagging and Random Forest
-- [ ] Boosting: AdaBoost
-- [ ] Gradient Boosting
-- [ ] XGBoost
+| Topic | Status | Notebook |
+|---|---|---|
+| Introduction to ensemble learning | ⏳ | |
+| Majority voting, average and weighted average | ✅ | 📓 [01-Voting-classifier-regressor](03-Ensemble-learning/01-Voting-classifier-regressor) |
+| Bagging and Random Forest | ✅ | 📓 [02-Randomforest-raisinclassification](03-Ensemble-learning/02-Randomforest-raisinclassification) |
+| Boosting: AdaBoost | ⏳ | |
+| Gradient Boosting | ✅ | 📓 [03-Gradientboosting-prediction](03-Ensemble-learning/03-Gradientboosting-prediction) · [04-gbclassification](03-Ensemble-learning/04-gbclassification) |
+| XGBoost | ✅ | 📓 [05-XGBoost](03-Ensemble-learning/05-XGBoost) |
+
+### Key takeaways
+
+- A hard-voting `VotingClassifier` (logistic regression + decision tree + SVM) beat a single SVM on the raisin data: accuracy 0.83 → 0.89.
+- Ensembling doesn't always help. A `VotingRegressor` (linear + ridge + decision tree) scored R² 0.87 on home prices, slightly below plain linear regression at 0.89.
+- Random Forest (20 trees) reached 0.88 accuracy on the raisins, ahead of a single decision tree (0.81) and an SVM (0.83) on the same split.
+- Gradient boosting gave the best R² on the ad-spend data (0.91 vs 0.89 for linear regression and decision tree), but percentage error is misleading when actual values are near zero or negative. On Titanic survival it scored 0.83 accuracy vs 0.79 for a decision tree and 0.78 for a random forest.
+- XGBoost was both better and faster on California housing (20,640 rows): R² 0.83 in 0.12 s, vs 0.78 in 6.1 s for scikit-learn's `GradientBoostingRegressor` and 0.60 for linear regression.
+- On a synthetic 3-class problem with redundant features, `XGBClassifier` scored 0.86 accuracy vs 0.65 for logistic regression.
 
 ## 4. Model evaluation and tuning
 
