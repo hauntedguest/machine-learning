@@ -11,13 +11,38 @@ I'm an automation engineer (RPA) moving into AI engineering. Everything here is 
 | # | Module | Status | Highlights |
 |---|---|---|---|
 | 01 | [Math & Statistics](01-math-and-statistics) | ✅ Done | Probability, distributions, hypothesis testing, A/B testing |
-| 02 | [Machine Learning](02-machine-learning) | 🟡 In progress | **Regression ✅** · Classification · Ensembles · Unsupervised · ML lifecycle |
+| 02 | [Machine Learning](02-machine-learning) | 🟡 In progress | **Regression ✅** · **Classification 🟡** · **Ensembles 🟡** · Unsupervised · ML lifecycle |
 | 03 | [Deep Learning](03-deep-learning) | ⏳ Not started | PyTorch, CNNs, transfer learning, RNN/LSTM, Transformers |
 | 04 | [NLP](04-nlp) | ⏳ Not started | Text preprocessing, TF-IDF, embeddings, spaCy, Hugging Face, BERT |
 | 05 | [Gen AI & Agentic AI](05-gen-ai-and-agentic-ai) | ⏳ Not started | LLMs, RAG, LangChain, LangGraph, CrewAI, MCP, AI agents |
 | ⭐ | [Projects](projects) | ⏳ Not started | End-to-end, deployed projects for each module |
 
-## Latest work: Regression
+## Latest work
+
+### Ensemble learning
+
+| Notebook | What it does | Result |
+|---|---|---|
+| [Voting classifier](02-machine-learning/03-Ensemble-learning/01-Voting-classifier-regressor/ensemble_voting_classifier.ipynb) | Combines logistic regression, a decision tree and an SVM with hard (majority) voting to classify raisins, compared with a single SVM | Accuracy 0.83 → **0.89** |
+| [Voting regressor](02-machine-learning/03-Ensemble-learning/01-Voting-classifier-regressor/emsemble_voting_regressor.ipynb) | Averages linear regression, ridge and a decision tree to predict home prices from area and bedrooms | R² **0.87** (single linear regression: 0.89) |
+| [Random Forest](02-machine-learning/03-Ensemble-learning/02-Randomforest-raisinclassification) | Classifies raisins with SVM, a decision tree and a 20-tree `RandomForestClassifier` on the same split | Accuracy **0.88** (SVM 0.83, tree 0.81) |
+| [Gradient boosting regression](02-machine-learning/03-Ensemble-learning/03-Gradientboosting-prediction) | Predicts revenue from ad spend and season (one-hot encoded) after a quick EDA, comparing linear regression, a decision tree and `GradientBoostingRegressor` | R² **0.91** (0.89 for the other two) |
+| [Gradient boosting classification](02-machine-learning/03-Ensemble-learning/04-gbclassification) | Predicts Titanic survival (887 passengers), comparing a decision tree, a random forest and `GradientBoostingClassifier` | Accuracy **0.83** (tree 0.79, forest 0.78) |
+| [XGBoost regressor](02-machine-learning/03-Ensemble-learning/05-XGBoost/xgb_california_housing.ipynb) | Predicts California median house values (20,640 rows) with linear regression, scikit-learn gradient boosting and `XGBRegressor`, timing each fit | R² **0.83** in 0.12 s (GB 0.78 in 6.1 s, linear 0.60) |
+| [XGBoost classifier](02-machine-learning/03-Ensemble-learning/05-XGBoost/xgb_classifier_tutorial.ipynb) | Classifies a synthetic 3-class dataset (10,000 rows, 4 informative + 6 redundant features) with logistic regression vs `XGBClassifier` | Accuracy **0.86** (logistic 0.65) |
+
+### Classification
+
+| Notebook | What it does | Result |
+|---|---|---|
+| [Logistic regression (binary)](02-machine-learning/02-classification/01-Logistic-Regression) | Predicts whether someone owns a car from their monthly salary, then recalculates the probability by hand with the sigmoid function to confirm it matches `predict_proba()` | Accuracy **0.89** (8 of 9 test rows) |
+| [Multiclass logistic regression](02-machine-learning/02-classification/02-Multi-Class-Classification) | Classifies iris flowers into 3 species from sepal and petal measurements, with a classification report and confusion matrix heatmap | Accuracy **0.98** on 45 test flowers |
+| [Support Vector Machine](02-machine-learning/02-classification/03-SVM) | Classifies 900 raisins (Kecimen vs Besni) from 7 shape features, comparing RBF and linear kernels with and without `StandardScaler`, then wraps scaler + SVM in a `Pipeline` | RBF accuracy 0.83 → **0.88** with scaling |
+| [Naive Bayes spam classifier](02-machine-learning/02-classification/04-Naive-Bayes-SMS%20Spam%20Classifier) | Classifies 5,572 SMS messages as spam or ham using `CountVectorizer` word counts and `MultinomialNB`, then rebuilds it as a two-step `Pipeline` | Accuracy **0.99**, spam F1 0.97 |
+| [Decision tree](02-machine-learning/02-classification/05-%20Decision%20Tree) | Predicts whether a salary is above 100k from company, job and degree (16 rows), comparing gini and entropy and printing the tree with `export_text` | Same tree with both criteria (no test split, the dataset is tiny) |
+| [Handling class imbalance](02-machine-learning/02-classification/06%20-%20Class%20Imbalance) | Predicts telecom customer churn (3,150 customers, 16% churn) with logistic regression, then retrains after random undersampling, SMOTE and SMOTE Tomek using `imbalanced-learn` | Churn recall 0.41 → **0.86** (SMOTE Tomek) |
+
+### Regression
 
 | Notebook | What it does | Result |
 |---|---|---|
@@ -35,13 +60,26 @@ See the [Machine Learning module](02-machine-learning) for the full topic list a
 ```
 ├── 01-math-and-statistics/
 ├── 02-machine-learning/
-│   └── 01-regression/
-│       ├── 01-linear-regression/
-│       ├── 02-multiple-linear-regression/
-│       ├── 03-train-test-split/
-│       ├── 04-one-hot-encoding/
-│       ├── 05-L1-L2-Regularisation/
-│       └── exercises/
+│   ├── 01-regression/
+│   │   ├── 01-linear-regression/
+│   │   ├── 02-multiple-linear-regression/
+│   │   ├── 03-train-test-split/
+│   │   ├── 04-one-hot-encoding/
+│   │   ├── 05-L1-L2-Regularisation/
+│   │   └── exercises/
+│   ├── 02-classification/
+│   │   ├── 01-Logistic-Regression/
+│   │   ├── 02-Multi-Class-Classification/
+│   │   ├── 03-SVM/
+│   │   ├── 04-Naive-Bayes-SMS Spam Classifier/
+│   │   ├── 05- Decision Tree/
+│   │   └── 06 - Class Imbalance/
+│   └── 03-Ensemble-learning/
+│       ├── 01-Voting-classifier-regressor/
+│       ├── 02-Randomforest-raisinclassification/
+│       ├── 03-Gradientboosting-prediction/
+│       ├── 04-gbclassification/
+│       └── 05-XGBoost/
 ├── 03-deep-learning/
 ├── 04-nlp/
 ├── 05-gen-ai-and-agentic-ai/
@@ -53,14 +91,14 @@ Each module folder has its own README with the topics it covers and a checklist 
 
 ## Tech stack
 
-**Used so far:** Python · pandas · scikit-learn · Jupyter
+**Used so far:** Python · pandas · scikit-learn · XGBoost · imbalanced-learn · Matplotlib · Seaborn · Jupyter
 
 **Coming up in this repo:**
 
 | Area | Tools |
 |---|---|
-| Data & math | NumPy, Matplotlib, Seaborn |
-| Machine learning | XGBoost, MLflow |
+| Data & math | NumPy |
+| Machine learning | MLflow |
 | Deep learning | PyTorch, Optuna |
 | NLP | spaCy, Hugging Face Transformers |
 | Gen AI & agents | LangChain, LangGraph, CrewAI, ChromaDB, MCP, Amazon Bedrock AgentCore |
